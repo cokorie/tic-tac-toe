@@ -1,0 +1,36 @@
+body {
+    /* viewport units: vh (viewport/page height), vw, vmin (smallest between vh & vw) */
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+header {
+    font-size: 10vmin;
+    color: grey;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 10vmin);
+  grid-template-rows: repeat(3, 10vmin);
+  gap: 1vmin;
+}
+
+#board > div {
+    border: 0.5vmin solid black;
+}
+
+button {
+    margin-top: 10px;
+}
+
+#space > div:hover {
+    transform: scale(0.9);
+    transition: all 0.2s ease-in;
+    border-top-color: black;
+  }
