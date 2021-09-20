@@ -29,7 +29,7 @@ button {
     margin-top: 10px;
 }
 
-#space > div:hover {
+#board > div:hover {
     transform: scale(0.9);
     transition: all 0.2s ease-in;
     border-top-color: black;

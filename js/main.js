@@ -8,11 +8,22 @@ let board;
 let turn;
 let winner;
 
-const playerEls = [...document.querySelector('#space > div')];
+const winnerLogic = [
+    [0, 1, 2], 
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6], 
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
+
+const playerEls = document.querySelector('#board > div');
 const msgEl = document.querySelector('h1');
 const btnEl = document.querySelector('button');
 
-document.getElementById('players').addEventListener('click', playerMove);
+document.getElementById('board').addEventListener('click', playerMove);
 
 btnEl.addEventListener('click', init);
 
@@ -20,50 +31,77 @@ init();
 
 function init() {
     board = [
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0]
+        null, null, null,
+        null, null, null,
+        null, null, null
     ];
 turn = 1;
 winner = null;
 render();
 }
 
-function playerMove(evt)    {
-    const colIdx = playerEls.indexOf(evt.target);
-    if (colIdx === -1) return; 
-    // access the column array
-    const colArr = board[colIdx];
-    // find the rowIdx for the first 0 in the colArr
-    const rowIdx = colArr.indexOf(0);
-    // update the board
-    board[colIdx][rowIdx] = turn;
-    // switch players
-    turn *= -1;
-    // check for winner
-    winner = getWinner(colIdx, rowIdx);
-    render();
+function render() {
+  // playerMove();
+  renderBoard();
+  renderMsg();
+  btnEl.style.visibility = winner ? 'visible' : 'hidden';
 }
 
-function render() {
-    renderBoard();
-    renderMsg();
-    btnEl.style.visibility = winner ? 'visible' : 'hidden';
+function playerMove(evt)    {
+  let idx = parseInt(evt.target.id);
+    // switch players
+    if (board[idx] !== null) {
+      return;
+    }
+    board[idx] = turn;
+    turn *= -1;
+//     // check for winner
+winner = getWinner();
+renderMsg();
+render();
 }
 
 function renderMsg() {
     if (winner) {
-      msgEl.innerHTML = `<span style="color: ${colorLookup[winner]}">${colorLookup[winner].toUpperCase()}</span> Wins!`;
+      msgEl.innerHTML = `<span style="color: ${playerMoveLookup[winner]}">${playerMoveLookup[winner].toUpperCase()}</span> Wins!`;
     } else {
-      msgEl.innerHTML = `<span style="color: ${colorLookup[turn]}">${colorLookup[turn].toUpperCase()}</span>'s Turn`;
+      msgEl.innerHTML = `<span style="color: ${playerMoveLookup[turn]}">${playerMoveLookup[turn].toUpperCase()}</span>'s Turn`;
     }
   }
 
   function renderBoard() {
-    board.forEach(function(colArr, colIdx) {
-      colArr.forEach(function(cell, rowIdx) {
-        const cellDiv = document.getElementById(`r${rowIdx}c${colIdx}`);
-        cellDiv.style.backgroundColor = colorLookup[cell];
-      });
-    });
+    board.forEach(function(cell, index) {
+        // playerEls[index].style.backgroundColor = playerMoveLookup[cell];
+        document.getElementById(`${index}`).style.backgroundColor = playerMoveLookup[cell];
+})
+}
+
+  // function getWinner() {
+  //   let winner = null;
+  //       winnerLogic.forEach(function(win)  {
+  //         win.forEach(function(value){
+  //             board[value];
+  //         });
+  //         const sumTotal = win.reduce(add, 0);
+  //         function add(a, b) {
+  //           return a + b;
+  //         } if(winnerLogic === 3 || winnerLogic === -3){
+  //           return winner;
+  //         } else {
+  //           return "tie";
+  //         }
+  //       })
+  //     }
+
+      function getWinner() {
+        let winner = null;
+      winnerLogic.forEach(function(win) {
+          let total = board[win[0]] + board[win[1]] + board[win[2]];
+          if (Math.abs(total) === 3) {
+              winner = turn *= -1;
+          } else if (Math.abs(total) !== 3){
+              return
+          }
+      })
+      return winner;
   }
