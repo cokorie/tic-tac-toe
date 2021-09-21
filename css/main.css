@@ -22,7 +22,10 @@ header {
 }
 
 #board > div {
-    border: 0.5vmin solid black;
+  position: relative;
+  text-align: center;
+  text-justify: center;
+  border: 1vmin solid black;
 }
 
 button {
