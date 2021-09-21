@@ -41,7 +41,6 @@ function init() {
 }
 
 function render() {
-  // playerMove();
   renderBoard();
   renderMsg();
   btnEl.style.visibility = winner ? 'visible' : 'hidden';
@@ -55,7 +54,7 @@ function playerMove(evt) {
   }
   board[idx] = turn;
   turn *= -1;
-  //     // check for winner
+  // check for winner
   winner = getWinner();
   renderMsg();
   render();
@@ -73,30 +72,11 @@ function renderMsg() {
 
 function renderBoard() {
   board.forEach(function (cell, index) {
-    // playerEls[index].style.backgroundColor = playerMoveLookup[cell];
     document.getElementById(`${index}`).style.backgroundColor = playerMoveLookup[cell];
   })
 }
 
-// function getWinner() {
-//   let winner = null;
-//       winnerLogic.forEach(function(win)  {
-//         win.forEach(function(value){
-//             board[value];
-//         });
-//         const sumTotal = win.reduce(add, 0);
-//         function add(a, b) {
-//           return a + b;
-//         } if(winnerLogic === 3 || winnerLogic === -3){
-//           return winner;
-//         } else {
-//           return "tie";
-//         }
-//       })
-//     }
-
 function getWinner() {
-  // let winner = null;
   for (let win of winnerLogic) {
     let total = board[win[0]] + board[win[1]] + board[win[2]];
     if (Math.abs(total) === 3) return turn *= -1;
