@@ -14,7 +14,7 @@ Just a fun game of Tic-Tac-Toe, built using the magic of HTML, CSS & JavaScript!
 
 ### __Webpage Link__
 Please click the below hyperlink to play Tic-Tac-Toe:
-* [Tic-Tac-Toe] (https://cokorie.github.io/tic-tac-toe)
+* [Chijioke's Tic-Tac-Toe](https://cokorie.github.io/tic-tac-toe)
 
 ### __Further Enhancememnts (Icebox)__
 * CSS coloring & positioning
