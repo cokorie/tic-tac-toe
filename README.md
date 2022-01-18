@@ -1,4 +1,4 @@
-# Tic-Tac-Toe
+# Chijioke's Tic-Tac-Toe
 
 Just a fun game of Tic-Tac-Toe, built using the magic of HTML, CSS & JavaScript!
 
