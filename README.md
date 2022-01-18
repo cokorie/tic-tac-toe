@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-Just a fun game of Tic-Tac-Toe, using HTML, CSS & JavaScript!
+Just a fun game of Tic-Tac-Toe, built using the magic of HTML, CSS & JavaScript!
 
 ### __Screenshots__
 ##### Tic-Tac-Toe Starting Screen
@@ -14,7 +14,7 @@ Just a fun game of Tic-Tac-Toe, using HTML, CSS & JavaScript!
 
 ### __Webpage Link__
 Please click the below hyperlink to play Tic-Tac-Toe:
-* [Tic-Tac-Toe] (/img/tictactoe.png)
+* [Tic-Tac-Toe] (https://cokorie.github.io/tic-tac-toe)
 
 ### __Further Enhancememnts (Icebox)__
 * CSS coloring & positioning
