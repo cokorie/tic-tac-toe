@@ -1,7 +1,7 @@
 const playerMoveLookup = {
-  'null': 'white',
-  '1': 'black',
-  '-1': 'red'
+  'null': '',
+  '1': 'X',
+  '-1': 'O'
 };
 
 let board;
@@ -64,15 +64,15 @@ function renderMsg() {
   if (winner === 'T') {
     msgEl.innerHTML = "It's a Tie!";
   } else if (winner) {
-    msgEl.innerHTML = `<span style="color: ${playerMoveLookup[winner]}">${playerMoveLookup[winner].toUpperCase()}</span> Wins!`;
+    msgEl.textContent = `${playerMoveLookup[winner]} Wins!`;
   } else {
-    msgEl.innerHTML = `<span style="color: ${playerMoveLookup[turn]}">${playerMoveLookup[turn].toUpperCase()}</span>'s Turn`;
+    msgEl.textContent = `${playerMoveLookup[turn]}'s Turn`;
   }
 }
 
 function renderBoard() {
   board.forEach(function (cell, index) {
-    document.getElementById(`${index}`).style.backgroundColor = playerMoveLookup[cell];
+    document.getElementById(`${index}`).textContent = playerMoveLookup[cell];
   })
 }
 

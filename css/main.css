@@ -1,39 +1,56 @@
 body {
-    /* viewport units: vh (viewport/page height), vw, vmin (smallest between vh & vw) */
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Open Sans', sans-serif;
-  }
+  /* viewport units: vh (viewport/page height), vw, vmin (smallest between vh & vw) */
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  background-color: limegreen;
+}
 
 header {
-    font-size: 10vmin;
-    color: grey;
+  font-size: 10vmin;
+  color: grey;
 }
 
 #board {
-  display: grid;
-  grid-template-columns: repeat(3, 10vmin);
-  grid-template-rows: repeat(3, 10vmin);
-  gap: 1vmin;
+display: grid;
+grid-template-columns: repeat(3, 14vmin);
+grid-template-rows: repeat(3, 14vmin);
+margin: 1vmin;
 }
 
 #board > div {
-  position: relative;
-  text-align: center;
-  text-justify: center;
-  border: 1vmin solid black;
+position: relative;
+display: flex;
+text-align: center;
+justify-content: center;
+text-justify: center;
+border: 1vmin solid black;
+font-size: 10vmin;
+}
+
+#board > .top {
+border-top: none;
+}
+#board > .right {
+border-right: none;
+}
+#board > .left {
+border-left: none;
+}
+#board > .bottom {
+border-bottom: none;
 }
 
 button {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 #board > div:hover {
-    transform: scale(0.9);
-    transition: all 0.2s ease-in;
-    border-top-color: black;
-  }
+  transform: scale(0.9);
+  transition: all 0.9s ease-in;
+  border-top-color: black;
+}
