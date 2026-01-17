@@ -4,7 +4,7 @@ Just a fun game of Tic-Tac-Toe, built using the magic of HTML, CSS & JavaScript!
 
 ### __Screenshots__
 ##### Tic-Tac-Toe Starting Screen
-![Tic-Tac-Toe Starting Screen](/img/tictactoe-board.png)
+![Tic-Tac-Toe Starting Screen](/img/tictactoe.png)
 
 ##### Tic-Tac-Toe Winning Screen
 ![Tic-Tac-Toe Winning Screen](/img/tictactoe-win.png)
