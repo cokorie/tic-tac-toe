@@ -54,7 +54,7 @@ function playerMove(evt) {
   }
   board[idx] = turn;
   turn *= -1;
-  // check for winner
+  // check for game winner
   winner = getWinner();
   renderMsg();
   render();
