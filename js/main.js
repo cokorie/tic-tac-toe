@@ -62,7 +62,7 @@ function playerMove(evt) {
 
 function renderMsg() {
   if (winner === 'T') {
-    msgEl.innerHTML = "Tie!";
+    msgEl.innerHTML = "It's a Tie!";
   } else if (winner) {
     msgEl.textContent = `${playerMoveLookup[winner]} Wins!`;
   } else {
